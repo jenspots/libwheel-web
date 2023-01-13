@@ -1,0 +1,87 @@
+---
+export interface Props {
+	title: string;
+}
+
+const { title } = Astro.props;
+---
+
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<meta name="generator" content={Astro.generator} />
+		<title>{title}</title>
+	</head>
+
+	<body class="flex flex-col min-h-[100vh] space-y-4">
+		<nav>
+			<div class="container">
+				<div class="flex items-center gap-8">
+					<div>
+						<h1>libwheel</h1>
+						<p>Don't reinvent the wheel, use libwheel.</p>
+					</div>
+					<div class="grow"></div>
+					<a href="/">Documentation</a>
+					<a href="/">About</a>
+					<a href="https://github.com/jenspots/libwheel">Repository</a>
+				</div>
+			</div>
+		</nav>
+
+		<slot />
+
+		<div class="grow"></div>
+
+		<footer>
+			<div class="container flex flex-col items-center">
+				<p>Copyright Jens Pots 2023</p>
+			</div>
+		</footer>
+	</body>
+</html>
+
+<style is:global>
+	h1 {
+		@apply text-4xl font-semibold;
+	};
+
+	h2 {
+		@apply text-2xl font-medium;
+	};
+
+	h3 {
+		@apply text-xl font-medium;
+	};
+
+	a {
+		@apply hover:underline font-semibold;
+	}
+
+	code {
+		@apply px-1 py-[1px] bg-neutral-100 rounded-sm;
+	}
+
+	pre {
+		@apply p-4 rounded-md text-sm;
+		background-color: rgb(247, 247, 247) !important;
+	}
+
+	.container {
+		@apply w-[1000px] m-auto py-6;
+	};
+</style>
+
+
+<style>
+	nav {
+		@apply bg-green-900/75 text-white;	
+	};
+
+	footer {
+		@apply bg-neutral-800 text-white;
+	}
+</style>

@@ -11,5 +11,7 @@ export default defineConfig({
       theme: 'min-light',
       wrap: true
     }
-  }
+  },
+  site: 'https://jenspots.github.io',
+  base: '/libwheel-web'
 });

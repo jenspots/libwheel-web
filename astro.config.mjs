@@ -12,6 +12,5 @@ export default defineConfig({
       wrap: true
     }
   },
-  site: 'https://jenspots.github.io',
-  base: '/libwheel-web'
+  site: 'https://wheel.jenspots.com'
 });
